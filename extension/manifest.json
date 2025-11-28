@@ -1,16 +1,15 @@
 {
   "manifest_version": 3,
-  "name": "LinkedIn Automation",
+  "name": "LinkedIn Auto",
   "version": "1.0",
-  "description": "Auto Like and Comment on Linkedin feed",
+  "description": "Auto Like and Comment Randomly on Linkedin feed",
   "permissions": [
     "activeTab",
     "scripting",
     "tabs"
   ],
   "host_permissions": [
-    "https://www.linkedin.com/*",
-    "http://localhost:3000/*"
+    "https://www.linkedin.com/*"
   ],
   "action": {
     "default_popup": "popup.html"
