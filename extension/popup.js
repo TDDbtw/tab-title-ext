@@ -1,8 +1,29 @@
-document.getElementById('start').addEventListener('click', () => {
-    const urls = document.getElementById('urls').value.split('\n').filter(url => url.trim() !== '');
-    if (urls.length < 3) {
-        alert('Please enter at least 3 LinkedIn URLs.');
-        return;
+const likeInput = document.getElementById('likeCount');
+const commentInput = document.getElementById('commentCount');
+const startButton = document.getElementById('start');
+
+function validateInputs() {
+    const likes = parseInt(likeInput.value, 10);
+    const comments = parseInt(commentInput.value, 10);
+
+    if (likes > 0 && comments > 0) {
+        startButton.disabled = false;
+    } else {
+        startButton.disabled = true;
     }
-    chrome.runtime.sendMessage({ action: 'start_scraping', urls: urls });
+}
+
+likeInput.addEventListener('input', validateInputs);
+commentInput.addEventListener('input', validateInputs);
+
+startButton.addEventListener('click', () => {
+    const likes = parseInt(likeInput.value, 10);
+    const comments = parseInt(commentInput.value, 10);
+
+    chrome.runtime.sendMessage({
+        action: 'start_automation',
+        likeCount: likes,
+        commentCount: comments
+    });
 });
+
