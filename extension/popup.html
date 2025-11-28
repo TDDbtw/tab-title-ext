@@ -1,35 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>LinkedIn Scraper</title>
-  <style>
-    body {
-      width: 300px;
-      padding: 10px;
-      font-family: Arial, sans-serif;
-    }
-    textarea {
-      width: 100%;
-      height: 150px;
-      margin-bottom: 10px;
-    }
-    button {
-      width: 100%;
-      padding: 10px;
-      background-color: #0073b1;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #005582;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedIn Booster</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h3>LinkedIn Scraper</h3>
-  <textarea id="urls" placeholder="Enter LinkedIn URLs (one per line)"></textarea>
-  <button id="start">Start Scraping</button>
+  <h3>LinkedIn Automate</h3>
+  <div class="field">
+    <label for="likeCount">Like Count</label>
+    <input type="number" id="likeCount" min="1" placeholder="no. of likes">
+  </div>
+
+  <div class="field">
+    <label for="commentCount">Comment Count </label>
+    <input type="number" id="commentCount" min="0" placeholder="no of comments">
+  </div>
+
+  <button id="start" disabled>Start Automation</button>
+
   <script src="popup.js"></script>
 </body>
 </html>
+
